@@ -1,13 +1,15 @@
+// @flow
+
 // Librerías
-import React from "react";
+import React from 'react';
 
 // Componentes
-import { ReactComponent as LogoIcon } from "../../Components/Icons/logo-icon.svg";
+import { ReactComponent as LogoIcon } from '../../Components/Icons/logo-icon.svg';
 
-import Search from "../Search";
+import Search from '../Search';
 
 // Estilos
-import styles from "./index.module.sass";
+import styles from './index.module.sass';
 
 export default function Header() {
   return (
