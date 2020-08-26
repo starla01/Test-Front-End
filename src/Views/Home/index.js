@@ -5,5 +5,10 @@ import React from "react";
 import styles from "./index.module.sass";
 
 export default function Home() {
-  return <div className={styles.continer}>Home</div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.banner}>Banner</div>
+      <div className={styles.content}>Home</div>
+    </div>
+  );
 }
