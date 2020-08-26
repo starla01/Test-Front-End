@@ -1,0 +1,37 @@
+:root {
+  /** Variables para background */
+  --default-bg: #fff;
+  --secondary-bg: #000000;
+  --primary-bg: ##f2f2f2;
+  --warning-bg: #f8475f;
+  --default-overlay: rgba(0, 0, 0, 0.7);
+  --muted-bg: #7a7a7a;
+
+  /** Variables para texto */
+  --main-color: #000;
+  --secondary-color: #fff;
+  --text-color: #585858;
+  --light-color: #7a7a7a;
+  --promotion-color: #f8475f;
+  --default-border: #7a7a7a;
+  --light-border: #c0c0c0;
+
+  /** Variable de ancho del sitio */
+  --max-content-width: 85.3rem;
+
+  /** Variable de contornos sombreados */
+  --box-shadow-default: 0 1px 4px 0 rgba(51, 51, 51, 0.2);
+  --box-shadow-icon: 0 3px 6px 0 rgba(0, 0, 0, 0.17);
+
+  /** Inputs */
+  --input-color: rgba(0, 0, 0, 0.87);
+  --input-label: rgba(0, 0, 0, 0.3);
+  --input-border: rgba(0, 0, 0, 0.1);
+
+  --input-active-border: rgba(215, 24, 42, 0.8);
+
+  /** Misc */
+  --transparent: transparent;
+  /**Font*/
+  --default-font: "Source Sans Pro", sans-serif;
+}
