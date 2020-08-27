@@ -1,16 +1,16 @@
 // Librerías
-import React, { useContext } from "react";
+import React from 'react';
 //import useDevice from "usedevice";
 
 // Components
-import Header from "./Modules/Header";
-import Footer from "./Modules/Footer";
-import Home from "./Views/Home";
+import Header from './Modules/Header';
+import Footer from './Modules/Footer';
+import Home from './Views/Home';
 //import { Context } from "./Providers";
 
 // Estilos
-import styles from "./app.module.sass";
-import "./variables.css";
+import styles from './app.module.sass';
+import './variables.css';
 
 // Constantes
 //import { BREAKPOINTS as breakpoints } from "./constants";

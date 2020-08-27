@@ -7,7 +7,6 @@ import styles from './index.module.sass';
 const assign = Object.assign;
 
 function TextField(props) {
-  console.log({ props });
   const [focus, setFocus] = useState(false);
   const overwrite = {};
   const inputData = props.input || {};
