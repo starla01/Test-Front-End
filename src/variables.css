@@ -2,10 +2,11 @@
   /** Variables para background */
   --default-bg: #fff;
   --secondary-bg: #000000;
-  --primary-bg: ##f2f2f2;
+  --primary-bg: #f2f2f2;
   --warning-bg: #f8475f;
   --default-overlay: rgba(0, 0, 0, 0.7);
   --muted-bg: #7a7a7a;
+  --light-bg: #bfbfbf;
 
   /** Variables para texto */
   --main-color: #000;
@@ -33,5 +34,5 @@
   /** Misc */
   --transparent: transparent;
   /**Font*/
-  --default-font: "Source Sans Pro", sans-serif;
+  --default-font: "Nunito", sans-serif;
 }

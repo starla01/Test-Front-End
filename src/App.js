@@ -9,7 +9,7 @@ import Home from "./Views/Home";
 //import { Context } from "./Providers";
 
 // Estilos
-import "./App.css";
+import styles from "./app.module.sass";
 import "./variables.css";
 
 // Constantes
@@ -20,11 +20,11 @@ function App({ history }) {
   //const device = useDevice({ breakpoints });
 
   return (
-    <>
+    <div className={styles.mainContainer}>
       <Header />
       <Home />
       <Footer />
-    </>
+    </div>
   );
 }
 
