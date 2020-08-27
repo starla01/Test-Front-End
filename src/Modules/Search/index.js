@@ -4,9 +4,6 @@ import React from 'react';
 // Componentes
 import { ReactComponent as SearchIcon } from '../../Components/Icons/search-icon.svg';
 
-// Componentes
-import { ReactComponent as SearchIcon } from '../../Components/Icons/search-icon.svg';
-
 // Estilos
 import styles from './index.module.sass';
 
