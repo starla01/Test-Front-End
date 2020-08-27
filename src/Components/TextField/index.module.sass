@@ -1,0 +1,80 @@
+.TextFieldRoot
+  width: 100%
+  position: relative
+  padding-top: 6px
+  &.disabled
+    opacity: 0.8
+  &.open
+    label
+      transform: scale(0.77) translate(0px, -24px)
+      background-color: white
+      padding: 0 5px
+      border-radius: 6px
+      box-shadow: var(--box-shadow-default)
+  &.focus
+    label
+      color: var(--input-active-border)
+    input
+      border: 1px solid var(--input-active-border)
+      &::-webkit-input-placeholder
+        color: var(--input-label)
+  &.error
+    label
+      color: red
+    input
+      border: 1px solid red
+  label
+    position: absolute
+    top: 12px
+    left: 6px
+    font-size: 14px
+    line-height: 28px
+    transform-origin: left top 0px
+    transition: 300ms ease-out all
+    color: var(--input-label)
+    cursor: text
+    will-change: transform
+    padding: 0 5px
+    background-color: var(--transparent)
+  input
+    width: 100%
+    border: none
+    outline: none
+    border: 1px solid var(--input-border)
+    margin: 0
+    padding: 0
+    font-size: 14px
+    height: 40px
+    color: var(--input-color)
+    transition: 300ms ease-out all
+    background-color: var(--transparent)
+    border-radius: 6px
+    text-indent: 9px
+    padding-top: 1px
+    &.realInput
+      position: absolute
+      top: 6px
+      left: 0
+      z-index: 1
+      border: 1px solid var(--transparent)
+      color: var(--transparent)
+      caret-color: var(--input-color)
+  .errorDescription
+    color: var(--error-color)
+    font-size: 12px
+    margin-top: 5px
+
+.checkIcon
+  position: absolute
+  right: 0
+  color: var(--active-color)
+  top: 0.75rem
+  right: 0.75rem
+  width: 1.25rem
+  height: auto
+
+.novoEmail
+  width: 400px
+
+h5
+  font-weight: 400

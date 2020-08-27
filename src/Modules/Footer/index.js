@@ -1,5 +1,5 @@
 // Librerías
-import React from 'react';
+import React, { useState } from 'react';
 
 // Components
 import { Button } from '../../Components/Button';
@@ -21,19 +21,95 @@ import { ReactComponent as LogoIcon } from '../../Components/Icons/logo-icon-whi
 import { ReactComponent as VtexIcon } from '../../Components/Icons/vtex-logo.svg';
 
 export default function Footer() {
+  const [sendData, setSendData] = useState(false);
+  const name = useInput({
+    id: 'name',
+    name: 'name',
+    value: '',
+    required: true,
+    errors: {
+      requiredError: 'Preencha com seu nome completo',
+      defaultError: 'Preencha com seu nome completo',
+    },
+    placeholder: 'Fernando Robles',
+    validateEvent: BLUR,
+    regexpOverwrite: /[A-Za-zÁ-Úá-ú ]+/,
+  });
+
+  const email = useInput({
+    id: 'email',
+    name: 'email',
+    value: '',
+    required: true,
+    validateEvent: 'blur',
+    regexp: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+    placeholder: 'email@email.com',
+    errors: {
+      requiredError: 'Preencha com um e-mail válido',
+      defaultError: 'Preencha com um e-mail válido',
+    },
+  });
+
+  const validateData = useInput.validateData;
+
+  function handleSubmitContact() {
+    const { errors } = validateData([name, email]);
+
+    if (!errors || !errors.length) {
+      setSendData(true);
+    } else console.log('Mensaje de error');
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.containerTop}>
         <div className={styles.top}>
-          <div className={styles.titleContact}>
-            Participe de nossas news com promoções e novidades!
-          </div>
-          <div className={styles.controls}>
-            <TextField className={styles.textFieldCurp} label="Password" input={passInput.input} />
-            <Button type="primary" classname={styles.classButton}>
-              <span className={styles.bigTextButton}> Eu quero!</span>
-            </Button>
-          </div>
+          {(!sendData && (
+            <>
+              <div className={styles.titleContact}>
+                Participe de nossas news com promoções e novidades!
+              </div>
+              <div className={styles.controls}>
+                <div className={styles.inputFiled}>
+                  <TextField
+                    toolTip=""
+                    className={styles.textFieldName}
+                    label=" Digite seu nome"
+                    input={name.input}
+                  />
+                </div>
+                <div className={styles.inputFiled}>
+                  <TextField
+                    toolTip=""
+                    className={styles.textFieldEmail}
+                    label="Digite seu email"
+                    input={email.input}
+                  />
+                </div>
+                <div className={styles.inputButton}>
+                  <Button
+                    type="primary"
+                    classname={styles.classButton}
+                    onClick={handleSubmitContact}>
+                    <span className={styles.bigTextButton}> Eu quero!</span>
+                  </Button>
+                </div>
+              </div>
+            </>
+          )) || (
+            <>
+              <h3>Seu e-mail foi cadastrado com sucesso! </h3>
+              <h5>A partir de agora você receberá as novidade e ofertas exclusivas.</h5>
+              <div className={styles.inputButton}>
+                <Button
+                  type="primary"
+                  classname={`${styles.classButton} ${styles.novoEmail}`}
+                  onClick={handleSubmitContact}>
+                  <span className={styles.bigTextButton}>{`Cadastrar novo e-mail`}</span>
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className={styles.containerBottom}>

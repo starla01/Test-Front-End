@@ -1,19 +1,16 @@
 // Librerías
 import React, { useState } from 'react';
 
-// Componentes
-import ToolTip from '../ToolTip';
-
 // Estilos
 import styles from './index.module.sass';
 
 const assign = Object.assign;
 
-function TextField({ props }) {
+function TextField(props) {
+  console.log({ props });
   const [focus, setFocus] = useState(false);
   const overwrite = {};
   const inputData = props.input || {};
-  const toolTipContent = props.toolTipContent;
   const propsInput = inputData.input || inputData || {};
   const isNewHook = !!inputData.input;
 
@@ -62,10 +59,6 @@ function TextField({ props }) {
           autoComplete="off"
         />
       )}
-      {!propsInput.error && !!inputAttributes.value && (
-        <span className={`material-icons ${styles.checkIcon}`}>done</span>
-      )}
-      {!!toolTipContent && <ToolTip content={toolTipContent} />}
       {!!propsInput.error && <div className={styles.errorDescription}>{propsInput.error}</div>}
     </div>
   );
