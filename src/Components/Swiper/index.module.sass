@@ -1,0 +1,33 @@
+.component
+  max-width: 100%
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+  &::-webkit-scrollbar
+    display: none
+
+.container
+  display: flex
+  justify-content: space-around
+
+.carousel
+  width: 100%
+  padding: 0 0 10px 0
+  overflow: hidden
+  position: relative
+
+.element
+  flex: 0 0 auto
+  display: flex
+  justify-content: center
+
+.isInactive
+  opacity: 0.2
+  &:hover
+    opacity: 0.2
+
+.isInactive, .isActive
+  transition: 300ms ease-out all
+  z-index: 1
+
+.avoidAnimation
+  transition: none!important
