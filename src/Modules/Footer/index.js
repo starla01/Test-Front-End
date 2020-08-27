@@ -3,9 +3,16 @@ import React from 'react';
 
 // Components
 import { Button } from '../../Components/Button';
+import TextField from '../../Components/TextField';
 
 // Estilos
 import styles from './index.module.sass';
+
+// Hooks
+import useInput from '../../Hooks/useInput';
+
+// Constantes
+import { BLUR } from '../../constants';
 
 // Iconos
 import { ReactComponent as AudioIcon } from '../../Components/Icons/audio.svg';
@@ -17,7 +24,17 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       <div className={styles.containerTop}>
-        <div className={styles.top}>content Top</div>
+        <div className={styles.top}>
+          <div className={styles.titleContact}>
+            Participe de nossas news com promoções e novidades!
+          </div>
+          <div className={styles.controls}>
+            <TextField className={styles.textFieldCurp} label="Password" input={passInput.input} />
+            <Button type="primary" classname={styles.classButton}>
+              <span className={styles.bigTextButton}> Eu quero!</span>
+            </Button>
+          </div>
+        </div>
       </div>
       <div className={styles.containerBottom}>
         <div className={styles.bottom}>
