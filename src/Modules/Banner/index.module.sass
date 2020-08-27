@@ -1,2 +1,82 @@
-.container
-  border: 1px solid black
+
+.containerBanner
+  transition: 600ms ease-out all
+  width: 100%
+  position: relative
+
+.containerImages
+  transition: 600ms ease-out all
+  height: 430px
+  display: flex
+  position: relative
+
+.containerBullets
+  position: absolute
+  width: 200px
+  height: 10px
+  left: 50%
+  margin-left: -100px
+  bottom: 40px
+  z-index: 101
+  display: flex
+  justify-content: center
+
+.bullet
+  width: 10px
+  height: 10px
+  background-color: var(--light-color)
+  border-radius: 50%
+  margin: 0 5px
+  &.active
+    background-color: var(--promotion-color)
+
+.backBlack
+  border: 3px
+  width: 52%
+  height: 100%
+  position: relative
+  display: flex
+  align-items: center
+
+.containerInfo
+  position: absolute
+  z-index: 102
+  right: 150px
+  width: 280px
+
+.title
+  color: var(--secondary-color)
+  font-weight: 700
+  font-size: 18px
+
+.text
+  color: var(--secondary-color)
+  font-weight: 700
+  font-size: 30px
+
+.backBanner
+  height: 100%
+  position: absolute
+  right: 0
+  z-index: 100
+
+.image
+  width: 100%
+  height: 430px
+  box-sizing: border-box
+  overflow: hidden
+  position: relative
+
+.imageBanner
+  width: 100%
+  position: absolute
+  right: 0
+  top: 0
+  display: flex
+  align-items: flex-end
+
+.assteImage
+  position: absolute
+  top: 0
+  right: 0
+  z-index: 99
