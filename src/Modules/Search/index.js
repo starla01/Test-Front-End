@@ -1,16 +1,19 @@
 // Librerías
-import React from "react";
+import React from 'react';
 
 // Componentes
-import { ReactComponent as SearchIcon } from "../../Components/Icons/search-icon.svg";
+import { ReactComponent as SearchIcon } from '../../Components/Icons/search-icon.svg';
+
+// Componentes
+import { ReactComponent as SearchIcon } from '../../Components/Icons/search-icon.svg';
 
 // Estilos
-import styles from "./index.module.sass";
+import styles from './index.module.sass';
 
 export default function Search() {
   return (
     <div className={styles.container}>
-      <p>search</p>
+      <input type="text" className={styles.searchInput} placeholder="O que está procurando?" />
       <SearchIcon />
     </div>
   );
