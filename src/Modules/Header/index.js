@@ -1,5 +1,5 @@
 // Librerías
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Componentes
 
@@ -14,7 +14,17 @@ import Search from '../Search';
 // Estilos
 import styles from './index.module.sass';
 
-export default function Header() {
+export default function Header({ state, actions }) {
+  const { cart } = state;
+  const saveCart = window.localStorage.cart;
+
+  useEffect(() => {
+    const recoveryCart = JSON.parse(saveCart);
+    recoveryCart.forEach((element) => {
+      actions.addToCart(element);
+    });
+  }, [cart]);
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -35,7 +45,7 @@ export default function Header() {
           </div>
           <div className={styles.cart}>
             <CartIcon />
-            <div className={styles.countItems}>1</div>
+            <div className={styles.countItems}>{cart.length}</div>
           </div>
         </div>
       </div>
