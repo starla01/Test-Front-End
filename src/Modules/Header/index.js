@@ -14,41 +14,58 @@ import Search from '../Search';
 // Estilos
 import styles from './index.module.sass';
 
-export default function Header({ state, actions }) {
+export default function Header({ screenSize, state, actions }) {
   const { cart } = state;
   const saveCart = window.localStorage.cart;
 
   useEffect(() => {
-    const recoveryCart = JSON.parse(saveCart);
+    const recoveryCart = (saveCart && JSON.parse(saveCart)) || [];
     recoveryCart.forEach((element) => {
       actions.addToCart(element);
     });
   }, [cart]);
 
+  console.log({ screenSize });
+
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.logo}>
-          <LogoIcon className={styles.logo} />
-          <div className={styles.dot}></div>
-        </div>
-        <div className={styles.search}>
-          <Search />
-        </div>
-        <div className={styles.profileData}>
-          <div className={styles.user}>
-            <div className={styles.joinPathsUserIcon}>
-              <HeadUserIcon />
-              <BodyUserIcon />
+      {(screenSize !== 'phone' && (
+        <div className={styles.content}>
+          <div className={styles.logo}>
+            <LogoIcon className={styles.logo} />
+            <div className={styles.dot}></div>
+          </div>
+          <div className={styles.search}>
+            <Search />
+          </div>
+          <div className={styles.profileData}>
+            <div className={styles.user}>
+              <div className={styles.joinPathsUserIcon}>
+                <HeadUserIcon />
+                <BodyUserIcon />
+              </div>
+              <span className={styles.name}>Minha Conta </span>
             </div>
-            <span className={styles.name}>Minha Conta </span>
-          </div>
-          <div className={styles.cart}>
-            <CartIcon />
-            <div className={styles.countItems}>{cart.length}</div>
+            <div className={styles.cart}>
+              <CartIcon />
+              <div className={styles.countItems}>{cart.length}</div>
+            </div>
           </div>
         </div>
-      </div>
+      )) || (
+        <div className={styles.contentPhone}>
+          <div className={styles.topHeader}>
+            <div className={styles.menuPhone}></div>
+            <div className={styles.logoPhone}></div>
+            <div className={styles.logoCart}></div>
+          </div>
+          <div className={styles.DownHeader}>
+            <div className={styles.search}>
+              <Search screenSize={screenSize} />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

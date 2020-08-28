@@ -7,7 +7,7 @@ import { ReactComponent as SearchIcon } from '../../Components/Icons/search-icon
 // Estilos
 import styles from './index.module.sass';
 
-export default function Search() {
+export default function Search({ screenSize }) {
   return (
     <div className={styles.container}>
       <input type="text" className={styles.searchInput} placeholder="O que está procurando?" />
