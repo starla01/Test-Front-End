@@ -7,37 +7,61 @@ import { Button } from '../../../../Components/Button';
 // Estilos
 import styles from './index.module.sass';
 
+// Utilerias
+import currency from '../../../../Utils/currency';
+
 // Iconos
 import { ReactComponent as StarFullIcon } from '../../../../Components/Icons/full-star.svg';
 import { ReactComponent as StarIcon } from '../../../../Components/Icons/star.svg';
+import { ReactComponent as OfferTag } from '../../../../Components/Icons/offer-tag.svg';
 
-export default function Product() {
+export default function Product({ product, actions }) {
+  const { imageUrl, installments, listPrice, price, productName, stars } = product;
+
+  function handleAddToCart() {
+    actions.addToCart(product);
+  }
+
   return (
     <div className={styles.container}>
+      {listPrice && (
+        <div className={styles.containerTag}>
+          <span className={styles.off}>OFF</span>
+          <OfferTag className={styles.tag} />
+        </div>
+      )}
+
       <div className={styles.image}>
-        <img src="images/zapato.png" alt="" />
+        <img src={imageUrl} alt="" />
       </div>
       <div className={styles.info}>
-        <div className={styles.name}>SAPATO FLOATER PRETO</div>
+        <div className={styles.name}>{productName}</div>
         <div className={styles.stars}>
-          <StarFullIcon />
-          <StarFullIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
+          {[0, 0, 0, 0, 0].map((element, key) => {
+            if (key < stars) {
+              return <StarFullIcon key={key} />;
+            } else {
+              return <StarIcon key={key} />;
+            }
+          })}
         </div>
         <div className={styles.discount}>
-          <span>de R$ 299,00</span>
+          {listPrice && <span>de R$ {currency(listPrice)}</span>}
         </div>
         <div className={styles.price}>
-          <span>por R$ 199,00</span>
+          <span>por R$ {currency(price)}</span>
         </div>
         <div className={styles.offer}>
-          <span>ou em 10x de R$ 29,90</span>
+          {(installments &&
+            installments.length &&
+            `ou em ${installments[0].quantity}x de R$ ${currency(installments[0].value)}`) ||
+            ''}
         </div>
-        <Button type="primary" classname={styles.classButton}>
-          <span className={styles.bigTextButton}>Comprar</span>
-        </Button>
+        <div className={styles.containerButton}>
+          <Button type="primary" classname={styles.classButton} onClick={handleAddToCart}>
+            <span className={styles.bigTextButton}>Comprar</span>
+          </Button>
+        </div>
       </div>
     </div>
   );

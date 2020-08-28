@@ -1,27 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { createContext, useReducer, useEffect } from "react";
-import reducer from "./reducer";
-import actions from "./actions";
-import usedevice from "usedevice";
+import React, { createContext, useReducer, useEffect } from 'react';
+import reducer from './reducer';
+import actions from './actions';
+import usedevice from 'usedevice';
 
 const breakpoints = [
   {
-    name: "largedesktop",
+    name: 'largedesktop',
     min: 1150,
     max: Infinity,
   },
   {
-    name: "desktop",
+    name: 'desktop',
     min: 1020,
     max: 1150,
   },
   {
-    name: "tablet",
+    name: 'tablet',
     min: 860,
     max: 1020,
   },
   {
-    name: "phone",
+    name: 'phone',
     min: 0,
     max: 860,
   },
@@ -38,16 +38,14 @@ export default (props) => {
     isMobileAgent,
     completedFetch: false,
     completedProfile: false,
-    login: {
-      user: null,
-    },
-    requisitions: null,
+    products: null,
+    cart: [],
   });
 
   const _actions = actions(dispatch, state);
 
   useEffect(() => {
-    dispatch({ type: "SET_BREAKPOINT", payload: breakpoint });
+    dispatch({ type: 'SET_BREAKPOINT', payload: breakpoint });
   }, [breakpoint]);
 
   return (
@@ -56,8 +54,7 @@ export default (props) => {
         state,
         dispatch,
         actions: _actions,
-      }}
-    >
+      }}>
       {props.children}
     </Context.Provider>
   );
