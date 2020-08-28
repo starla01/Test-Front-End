@@ -57,7 +57,21 @@ export default function Footer() {
 
     if (!errors || !errors.length) {
       setSendData(true);
+      return fetch('https://corebiz-test.herokuapp.com/api/v1/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify({
+          email: email.input.input.value,
+          name: name.input.input.value,
+        }),
+      });
     } else console.log('Mensaje de error');
+  }
+
+  function handledNovoEmail() {
+    setSendData(false);
   }
 
   return (
@@ -104,7 +118,7 @@ export default function Footer() {
                 <Button
                   type="primary"
                   classname={`${styles.classButton} ${styles.novoEmail}`}
-                  onClick={handleSubmitContact}>
+                  onClick={handledNovoEmail}>
                   <span className={styles.bigTextButton}>{`Cadastrar novo e-mail`}</span>
                 </Button>
               </div>

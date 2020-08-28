@@ -2,9 +2,12 @@
 .container
   height: 400px
   cursor: pointer
+  position: relative
   &:hover
     .info
       background: var(--product-bg)
+      .containerButton
+        display: block
 
 .info
   padding: 10px 30px
@@ -13,6 +16,9 @@
   justify-content: center
   flex-direction: column
   align-items: center
+
+.image
+  text-align: center
 
 .name
   font-size: 12px
@@ -23,6 +29,7 @@
 .discount
   font-size: 11px
   color: var(--muted-bg)
+  height: 18px
 
 .price
   font-size: 18px
@@ -32,3 +39,24 @@
   font-size: 11px
   color: var(--muted-bg)
   margin: 0 0 10px 0
+  height: 16px
+
+.containerTag
+  position: absolute
+  top: 0
+  right: 0
+  width: 84px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.off
+  position: absolute
+  right: 10px
+  top: 10px
+  color: var(--secondary-color)
+  font-weight: 700
+
+.containerButton
+  width: 100%
+  display: none
