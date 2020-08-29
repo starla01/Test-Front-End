@@ -20,6 +20,23 @@ import { ReactComponent as EmailIcon } from '../../Components/Icons/email.svg';
 import { ReactComponent as LogoIcon } from '../../Components/Icons/logo-icon-white.svg';
 import { ReactComponent as VtexIcon } from '../../Components/Icons/vtex-logo.svg';
 
+/**
+ * Footer Component
+ *
+ * @name Footer
+ * @description Componente para renderizar Cajas de entradas de Texto
+ *
+ *
+ * @param {Objet} params props del componente React
+ * @param {Number} params.screenSize Propiedad que contiene el nombre del breackpoin para el ancho de la pantall actual
+ *
+ * @example
+ *
+ *     <Footer screenSize={screenSize} />
+ *
+ * @returns {React.Component}
+ */
+
 export default function Footer({ screenSize }) {
   const isPhone = PHONE === screenSize;
   const [sendData, setSendData] = useState(false);
@@ -87,7 +104,6 @@ export default function Footer({ screenSize }) {
               <div className={`${styles.controls} ${(isPhone && styles.phone) || ''}`}>
                 <div className={styles.inputFiled}>
                   <TextField
-                    toolTip=""
                     className={styles.textFieldName}
                     label=" Digite seu nome"
                     input={name.input}
@@ -95,7 +111,6 @@ export default function Footer({ screenSize }) {
                 </div>
                 <div className={styles.inputFiled}>
                   <TextField
-                    toolTip=""
                     className={styles.textFieldEmail}
                     label="Digite seu email"
                     input={email.input}
