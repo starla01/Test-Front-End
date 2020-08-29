@@ -14,13 +14,14 @@ import { PHONE, TABLET, DESKTOP } from '../../constants';
 /**
  *
  * @param {Obejtc} props Props del componente React
- * @param {Array} props.data  Contenido a renderizar
  * @param {String} props.className Estilos a heredar
  * @param {Boolean} props.showArrows Mostrar flechas (true|false)
  * @param {String} props.link valor del link de redirección
+ * @param {String} props.title TItulo de la sección del carrusel
+ * @param {String} props.screenSize Propiedad que contiene el nombre del breackpoin para el ancho de la pantall actual
  * @example
  *
- *        <Slider className={styles.carousel} data={bannerList} />
+ *        <Slider className={styles.carousel} data={productList} />
  *
  * @returns {React.Component}
  */

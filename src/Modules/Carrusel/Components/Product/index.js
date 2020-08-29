@@ -11,12 +11,29 @@ import styles from './index.module.sass';
 import currency from '../../../../Utils/currency';
 
 // Iconos
-import { ReactComponent as StarFullIcon } from '../../../../Components/Icons/full-star.svg';
 import { ReactComponent as StarIcon } from '../../../../Components/Icons/star.svg';
 import { ReactComponent as OfferTag } from '../../../../Components/Icons/offer-tag.svg';
+import { ReactComponent as StarFullIcon } from '../../../../Components/Icons/full-star.svg';
 
 // Constantes
 import { PHONE, DESKTOP } from '../../../../constants';
+
+/**
+ * Product Component
+ *
+ * @name Product
+ * @description Componente para renderizar Cajas Productos en listados de productos
+ *
+ *
+ * @param {Objet} params props del componente React
+ * @param {Number} params.screenSize Propiedad que contiene el nombre del breackpoin para el ancho de la pantall actual
+ *
+ * @example
+ *
+ *     <Footer screenSize={screenSize} />
+ *
+ * @returns {React.Component}
+ */
 
 export default function Product({ product, actions, screenSize }) {
   const isPhone = PHONE === screenSize;

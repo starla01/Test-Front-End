@@ -10,6 +10,23 @@ import styles from './index.module.sass';
 // Constantes
 import { PHONE, TABLET } from '../../constants';
 
+/**
+ * Search Component
+ *
+ * @name Search
+ * @description Componente para renderizar componente de buscador en el Header
+ *
+ *
+ * @param {Objet} params props del componente React
+ * @param {String} params.screenSize Propiedad que contiene el nombre del breackpoin para el ancho de la pantall actual
+ *
+ * @example
+ *
+ *     <Search screenSize={screenSize}  />
+ *
+ * @returns {React.Component}
+ */
+
 export default function Search({ screenSize }) {
   const isPhone = screenSize === PHONE;
   const isTablet = screenSize === TABLET;

@@ -6,7 +6,30 @@ import styles from './index.module.sass';
 
 const assign = Object.assign;
 
-function TextField(props) {
+/**
+ * TextField Component
+ *
+ * @name TextField
+ * @description Componente para renderizar Cajas de entradas de Texto
+ *
+ *
+ * @param {Objet} params props del componente React
+ * @param {Number} params.className Propiedad que contiene estilos personalizados
+ * @param {Number} params.label Etiqueta a mostar como placeholder
+ * @param {Number} params.input objeto con datos del control, value, status, change etc
+ *
+ * @example
+ *
+ *     <TextField
+ *        className={styles.textFieldName}
+ *        label=" Digite seu nome"
+ *        input={name.input}
+ *     />
+ *
+ * @returns {React.Component}
+ */
+
+export default function TextField(props) {
   const [focus, setFocus] = useState(false);
   const overwrite = {};
   const inputData = props.input || {};
@@ -62,5 +85,3 @@ function TextField(props) {
     </div>
   );
 }
-
-export default TextField;

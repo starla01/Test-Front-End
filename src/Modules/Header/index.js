@@ -14,6 +14,25 @@ import { ReactComponent as MenuIcon } from '../../Components/Icons/menu.svg';
 // Estilos
 import styles from './index.module.sass';
 
+/**
+ * Header Component
+ *
+ * @name Header
+ * @description Componente para renderizar El header de la aplicación
+ *
+ *
+ * @param {Objet} params props del componente React
+ * @param {String} params.screenSize Propiedad que contiene el nombre del breackpoin para el ancho de la pantall actual
+ * @param {Object} params.state Objeto de estado general de la aplicación
+ * @param {Funt} params.actions Coleccion de funciones
+ *
+ * @example
+ *
+ *     <Header screenSize={screenSize} state={state} actions={actions} />
+ *
+ * @returns {React.Component}
+ */
+
 export default function Header({ screenSize, state, actions }) {
   const { cart } = state;
   const saveCart = window.localStorage.cart;
