@@ -15,7 +15,12 @@ import { ReactComponent as StarFullIcon } from '../../../../Components/Icons/ful
 import { ReactComponent as StarIcon } from '../../../../Components/Icons/star.svg';
 import { ReactComponent as OfferTag } from '../../../../Components/Icons/offer-tag.svg';
 
-export default function Product({ product, actions }) {
+// Constantes
+import { PHONE, DESKTOP } from '../../../../constants';
+
+export default function Product({ product, actions, screenSize }) {
+  const isPhone = PHONE === screenSize;
+  const isDesktop = DESKTOP === screenSize;
   const { imageUrl, installments, listPrice, price, productName, stars } = product;
 
   function handleAddToCart() {
@@ -23,7 +28,7 @@ export default function Product({ product, actions }) {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${(isPhone && styles.phone) || ''}`}>
       {listPrice && (
         <div className={styles.containerTag}>
           <span className={styles.off}>OFF</span>
@@ -48,7 +53,7 @@ export default function Product({ product, actions }) {
         <div className={styles.discount}>
           {listPrice && <span>de R$ {currency(listPrice)}</span>}
         </div>
-        <div className={styles.price}>
+        <div className={`${styles.price} ${(!isDesktop && styles.phone) || ''}`}>
           <span>por R$ {currency(price)}</span>
         </div>
         <div className={styles.offer}>
@@ -57,7 +62,7 @@ export default function Product({ product, actions }) {
             `ou em ${installments[0].quantity}x de R$ ${currency(installments[0].value)}`) ||
             ''}
         </div>
-        <div className={styles.containerButton}>
+        <div className={`${styles.containerButton} ${(!isDesktop && styles.phone) || ''}`}>
           <Button type="primary" classname={styles.classButton} onClick={handleAddToCart}>
             <span className={styles.bigTextButton}>Comprar</span>
           </Button>
