@@ -8,6 +8,13 @@
       background: var(--product-bg)
       .containerButton
         display: block
+  &.phone
+    width: 160px
+    .name
+      height: 40px
+      overflow: hidden
+    .info
+      padding: 5px
 
 .info
   padding: 10px 30px
@@ -19,6 +26,8 @@
 
 .image
   text-align: center
+  img
+    width: 100%
 
 .name
   font-size: 12px
@@ -34,6 +43,8 @@
 .price
   font-size: 18px
   font-weight: 700
+  &.phone
+    font-size: 14px
 
 .offer
   font-size: 11px
@@ -60,3 +71,7 @@
 .containerButton
   width: 100%
   display: none
+  &.phone
+    display: block
+    position: relative
+    top: 20px

@@ -2,14 +2,14 @@
 import React, { useEffect } from 'react';
 
 // Componentes
+import Search from '../Search';
 
 // Iconos
 import { ReactComponent as LogoIcon } from '../../Components/Icons/logo-icon.svg';
 import { ReactComponent as HeadUserIcon } from '../../Components/Icons/userhead-icon.svg';
 import { ReactComponent as BodyUserIcon } from '../../Components/Icons/userbody-icon.svg';
 import { ReactComponent as CartIcon } from '../../Components/Icons/cart.svg';
-
-import Search from '../Search';
+import { ReactComponent as MenuIcon } from '../../Components/Icons/menu.svg';
 
 // Estilos
 import styles from './index.module.sass';
@@ -25,8 +25,6 @@ export default function Header({ screenSize, state, actions }) {
     });
   }, [cart]);
 
-  console.log({ screenSize });
-
   return (
     <div className={styles.container}>
       {(screenSize !== 'phone' && (
@@ -36,7 +34,7 @@ export default function Header({ screenSize, state, actions }) {
             <div className={styles.dot}></div>
           </div>
           <div className={styles.search}>
-            <Search />
+            <Search screenSize={screenSize} />
           </div>
           <div className={styles.profileData}>
             <div className={styles.user}>
@@ -55,9 +53,17 @@ export default function Header({ screenSize, state, actions }) {
       )) || (
         <div className={styles.contentPhone}>
           <div className={styles.topHeader}>
-            <div className={styles.menuPhone}></div>
-            <div className={styles.logoPhone}></div>
-            <div className={styles.logoCart}></div>
+            <div className={styles.menuPhone}>
+              <MenuIcon className={styles.burguerIcon} />
+            </div>
+            <div className={styles.logoPhone}>
+              <LogoIcon className={styles.iconPhone} />
+              <div className={styles.dot}></div>
+            </div>
+            <div className={styles.logoCart}>
+              <CartIcon />
+              <div className={styles.countItems}>{cart.length}</div>
+            </div>
           </div>
           <div className={styles.DownHeader}>
             <div className={styles.search}>

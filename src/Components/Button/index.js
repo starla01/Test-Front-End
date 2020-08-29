@@ -18,20 +18,16 @@ const SECONDARY = 'secondary';
  * @param {Object} props.children Contenido a mostrar dentro del boton
  *
  * @example
- *          //Cancel
- *           <Button type="cancel" onClick={onCancel}>
+ *          //Primary
+ *           <Button type="primary" onClick={onCancel}>
  *              Regresar
  *           </Button>
  *
- *          //Disabled
- *           <Button type="disabled">
+ *          //Secondary
+ *           <Button type="secondary">
  *              Regresar
  *           </Button>
  *
- *           //Dafault
- *           <Button onClick={handlePayment}>
- *              Pagar
- *           </Button>
  *
  * @returns {React.Component}
  **/
