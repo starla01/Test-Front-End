@@ -33,6 +33,23 @@ const data = [
   },
 ];
 
+/**
+ * Banner Component
+ *
+ * @name TextField
+ * @description Componente para renderizar Cajas de entradas de Texto
+ *
+ *
+ * @param {Objet} params props del componente React
+ * @param {Number} params.screenSize Propiedad que contiene el nombre del breackpoin para el ancho de la pantall actual
+ *
+ * @example
+ *
+ *     <Banner screenSize={screenSize} />
+ *
+ * @returns {React.Component}
+ */
+
 export default function Banner({ screenSize }) {
   const isPhone = screenSize === PHONE;
   const [positionBanner, setPositionBanner] = useState(0);

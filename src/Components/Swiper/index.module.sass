@@ -1,6 +1,6 @@
 .component
-  max-width: 100%
   overflow: auto
+  max-width: 100%
   -webkit-overflow-scrolling: touch
   &::-webkit-scrollbar
     display: none
@@ -11,13 +11,13 @@
 
 .carousel
   width: 100%
-  padding: 0 0 10px 0
   overflow: hidden
   position: relative
+  padding: 0 0 10px 0
 
 .element
-  flex: 0 0 auto
   display: flex
+  flex: 0 0 auto
   justify-content: center
 
 .isInactive
@@ -26,8 +26,8 @@
     opacity: 0.2
 
 .isInactive, .isActive
-  transition: 300ms ease-out all
   z-index: 1
+  transition: 300ms ease-out all
 
 .avoidAnimation
   transition: none!important

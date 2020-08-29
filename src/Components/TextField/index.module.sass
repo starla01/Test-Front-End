@@ -1,16 +1,16 @@
 .TextFieldRoot
   width: 100%
-  position: relative
   padding-top: 6px
+  position: relative
   &.disabled
     opacity: 0.8
   &.open
     label
-      transform: scale(0.77) translate(0px, -24px)
-      background-color: white
       padding: 0 5px
       border-radius: 6px
+      background-color: white
       box-shadow: var(--box-shadow-default)
+      transform: scale(0.77) translate(0px, -24px)
   &.focus
     label
       color: var(--input-active-border)
@@ -24,54 +24,54 @@
     input
       border: 1px solid red
   label
-    position: absolute
     top: 12px
     left: 6px
+    cursor: text
+    padding: 0 5px
     font-size: 14px
     line-height: 28px
-    transform-origin: left top 0px
-    transition: 300ms ease-out all
-    color: var(--input-label)
-    cursor: text
+    position: absolute
     will-change: transform
-    padding: 0 5px
+    color: var(--input-label)
+    transition: 300ms ease-out all
+    transform-origin: left top 0px
     background-color: var(--transparent)
   input
-    width: 100%
-    border: none
-    outline: none
-    border: 1px solid var(--input-border)
     margin: 0
     padding: 0
-    font-size: 14px
+    width: 100%
+    border: none
     height: 40px
+    outline: none
+    font-size: 14px
+    text-indent: 9px
+    padding-top: 1px
+    border-radius: 6px
     color: var(--input-color)
     transition: 300ms ease-out all
     background-color: var(--transparent)
-    border-radius: 6px
-    text-indent: 9px
-    padding-top: 1px
+    border: 1px solid var(--input-border)
     &.realInput
-      position: absolute
-      top: 6px
       left: 0
+      top: 6px
       z-index: 1
-      border: 1px solid var(--transparent)
+      position: absolute
       color: var(--transparent)
       caret-color: var(--input-color)
+      border: 1px solid var(--transparent)
   .errorDescription
     color: var(--error-color)
     font-size: 12px
     margin-top: 5px
 
 .checkIcon
-  position: absolute
   right: 0
-  color: var(--active-color)
+  height: auto
   top: 0.75rem
   right: 0.75rem
   width: 1.25rem
-  height: auto
+  position: absolute
+  color: var(--active-color)
 
 .novoEmail
   width: 400px

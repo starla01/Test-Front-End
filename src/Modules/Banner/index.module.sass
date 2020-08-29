@@ -1,25 +1,25 @@
 
 .containerBanner
-  transition: 600ms ease-out all
   width: 100%
-  position: relative
   overflow: hidden
+  position: relative
+  transition: 600ms ease-out all
 
 .containerImages
-  transition: 600ms ease-out all
   height: 100%
   display: flex
   position: relative
+  transition: 600ms ease-out all
 
 .containerBullets
-  position: absolute
+  left: 50%
   width: 200px
   height: 10px
-  left: 50%
-  margin-left: -100px
   bottom: 40px
   z-index: 101
   display: flex
+  position: absolute
+  margin-left: -100px
   justify-content: center
   &.phone
     bottom: 13px
@@ -30,69 +30,69 @@
 .bullet
   width: 10px
   height: 10px
-  background-color: var(--light-color)
-  border-radius: 50%
   margin: 0 5px
+  border-radius: 50%
+  background-color: var(--light-color)
   &.active
     background-color: var(--promotion-color)
 
 .backBlack
-  border: 3px
   width: 52%
+  border: 3px
   height: 100%
-  position: relative
   display: flex
+  position: relative
   align-items: center
 
 .containerInfo
-  position: absolute
   z-index: 102
   right: 150px
   width: 280px
+  position: absolute
 
 .title
-  color: var(--secondary-color)
   font-weight: 700
   font-size: 18px
+  color: var(--secondary-color)
 
 .text
-  color: var(--secondary-color)
-  font-weight: 700
   font-size: 30px
+  font-weight: 700
+  color: var(--secondary-color)
 
 .backBanner
-  height: 100%
-  position: absolute
   right: 0
   z-index: 100
+  height: 100%
+  position: absolute
 
 .image
   width: 100%
   height: 430px
-  box-sizing: border-box
   overflow: hidden
   position: relative
+  box-sizing: border-box
 
 .imagePhone
   width: 100%
   height: 190px
-  box-sizing: border-box
   overflow: hidden
   position: relative
+  box-sizing: border-box
 
 .imageBanner
-  width: 100%
-  position: absolute
-  right: 0
   top: 0
+  right: 0
+  width: 100%
   display: flex
+  position: absolute
   align-items: flex-end
 
 .assteImage
-  position: absolute
   top: 0
   right: 0
   z-index: 99
+  position: absolute
 
 .imagePhone
   display: flex
@@ -102,12 +102,12 @@
   width: 140%
 
 .containerInfoPhone
-  position: absolute
-  left: 20px
-  z-index: 10
-  width: 80%
-  line-height: 30px
   top: 30px
+  left: 20px
+  width: 80%
+  z-index: 10
+  line-height: 30px
+  position: absolute
   .title
     font-size: 20px
     line-height: 22px
@@ -117,9 +117,9 @@
     line-height: 30px
 
 .overlay
+  top: 0
+  left: 0
   width: 100%
   height: 100%
   position: absolute
-  left: 0
-  top: 0
   background: rgba(0,0,0,0.5)
