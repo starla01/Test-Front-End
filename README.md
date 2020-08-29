@@ -1,6 +1,6 @@
 Este proyecto esta creado con [Create React App](https://github.com/facebook/create-react-app).
 
-Antes de ejecutar, en el directorio del proyecto debera installar las dependencias utilizando el siguiente comando en consola
+Antes de ejecutar, en el directorio del proyecto deberá instalar las dependencias utilizando el siguiente comando en consola
 
 ```
   npm install
@@ -11,7 +11,7 @@ Antes de ejecutar, en el directorio del proyecto debera installar las dependenci
   yarn install
 ```
 
-Despues de haver instalado las dependencias
+Después de haber instalado las dependencias
 
 ## Scripts disponibles
 
