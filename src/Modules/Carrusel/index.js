@@ -8,6 +8,9 @@ import { Context } from '../../Providers';
 import { ReactComponent as ArrowLeft } from '../../Components/Icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from '../../Components/Icons/arrow-right.svg';
 
+// Constantes
+import { PHONE, TABLET, DESKTOP } from '../../constants';
+
 /**
  *
  * @param {Obejtc} props Props del componente React
@@ -22,31 +25,35 @@ import { ReactComponent as ArrowRight } from '../../Components/Icons/arrow-right
  * @returns {React.Component}
  */
 
-const Slider = ({ className = '', showArrows = false, title = '' }) => {
+const Slider = ({ className = '', showArrows = false, title = '', screenSize }) => {
+  const isPhone = PHONE === screenSize;
+  const isTablet = TABLET === screenSize;
+  const isDesktop = DESKTOP === screenSize;
   const { state, actions } = useContext(Context);
   const { products } = state;
+  const slidesToShow = (isPhone && 2) || (isTablet && 3) || 4;
 
   const childToRender =
     (products &&
       products.map((product, index) => {
-        return <Product key={index} product={product} actions={actions} />;
+        return <Product key={index} product={product} actions={actions} screenSize={screenSize} />;
       })) ||
     [];
 
   return (
     <div>
-      <div className={styles.containerTitle}>
+      <div className={`${styles.containerTitle} ${(!isDesktop && styles.phone) || ''}`}>
         <h2>{title}</h2>
         <div className={styles.downLine}></div>
       </div>
       {products && (
         <Swiper
-          type="swipe"
-          arrows={true}
+          type={((isPhone || isTablet) && 'scroll') || 'swipe'}
+          arrows={((isPhone || isTablet) && false) || true}
           tension={140}
           friction={28}
           infinite={true}
-          slidesToShow={4}
+          slidesToShow={slidesToShow}
           slidesToScroll={1}
           parentClass={styles.parent}
           elementClass={styles.slide}

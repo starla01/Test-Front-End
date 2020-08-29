@@ -1,9 +1,23 @@
 .container
-  width: 718px
-  border-bottom: 1px solid var(--default-border)
+  &.phone
+    top: -5px
+    width: 100%
+    display: flex
+    position: relative
+    padding: 10px 0 0 0
+    justify-content: center
+    .wrapperSearch
+      width: 100%
+  &.tablet
+    width: 400px
+  &.desktop
+    width: 718px
+
+.wrapperSearch
   height: 23px
   display: flex
   justify-content: space-between
+  border-bottom: 1px solid var(--default-border)
 
 .searchInput
   width: 100%

@@ -12,7 +12,7 @@ import styles from './index.module.sass';
 import useInput from '../../Hooks/useInput';
 
 // Constantes
-import { BLUR } from '../../constants';
+import { BLUR, PHONE } from '../../constants';
 
 // Iconos
 import { ReactComponent as AudioIcon } from '../../Components/Icons/audio.svg';
@@ -20,7 +20,8 @@ import { ReactComponent as EmailIcon } from '../../Components/Icons/email.svg';
 import { ReactComponent as LogoIcon } from '../../Components/Icons/logo-icon-white.svg';
 import { ReactComponent as VtexIcon } from '../../Components/Icons/vtex-logo.svg';
 
-export default function Footer() {
+export default function Footer({ screenSize }) {
+  const isPhone = PHONE === screenSize;
   const [sendData, setSendData] = useState(false);
   const name = useInput({
     id: 'name',
@@ -75,15 +76,15 @@ export default function Footer() {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.containerTop}>
+    <div className={`${styles.container} ${(isPhone && styles.phone) || ''}`}>
+      <div className={`${styles.containerTop} ${(isPhone && styles.phone) || ''}`}>
         <div className={styles.top}>
           {(!sendData && (
             <>
               <div className={styles.titleContact}>
                 Participe de nossas news com promoções e novidades!
               </div>
-              <div className={styles.controls}>
+              <div className={`${styles.controls} ${(isPhone && styles.phone) || ''}`}>
                 <div className={styles.inputFiled}>
                   <TextField
                     toolTip=""
@@ -117,7 +118,9 @@ export default function Footer() {
               <div className={styles.inputButton}>
                 <Button
                   type="primary"
-                  classname={`${styles.classButton} ${styles.novoEmail}`}
+                  classname={`${styles.classButton} ${styles.novoEmail} ${
+                    (isPhone && styles.phone) || ''
+                  }`}
                   onClick={handledNovoEmail}>
                   <span className={styles.bigTextButton}>{`Cadastrar novo e-mail`}</span>
                 </Button>
@@ -126,8 +129,8 @@ export default function Footer() {
           )}
         </div>
       </div>
-      <div className={styles.containerBottom}>
-        <div className={styles.bottom}>
+      <div className={`${styles.containerBottom} ${(isPhone && styles.phone) || ''}`}>
+        <div className={`${styles.bottom} ${(isPhone && styles.phone) || ''}`}>
           <div id={styles.addressInfo} className={styles.block}>
             <h2 className={styles.title}>Localização</h2>
             <div className={styles.assetLine}></div>
