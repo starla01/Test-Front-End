@@ -1,6 +1,6 @@
 Este proyecto esta creado con [Create React App](https://github.com/facebook/create-react-app).
 
-Antes de ejecutar, en el directorio del proyecto debera installar las dependencias utilizando el siguiente comando
+Antes de ejecutar, en el directorio del proyecto debera installar las dependencias utilizando el siguiente comando en consola
 
 ```
   npm install
